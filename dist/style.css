@@ -1,0 +1,136 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+}
+
+#game-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Canvas fills container — Phaser Scale.FIT handles aspect ratio */
+#game-container canvas {
+  display: block;
+}
+
+#ui-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10;
+  font-family: 'Courier New', monospace;
+}
+
+#ui-overlay.active {
+  pointer-events: auto;
+}
+
+/* Shop Panel — use relative units so it scales with overlay */
+.shop-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(10, 10, 30, 0.95);
+  border: 2px solid #ffdd00;
+  border-radius: 8px;
+  padding: 20px;
+  width: 72%;
+  max-width: 700px;
+  max-height: 90%;
+  overflow-y: auto;
+  color: #fff;
+}
+
+.shop-panel h2 {
+  text-align: center;
+  color: #ffdd00;
+  margin-bottom: 10px;
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+.shop-coins {
+  text-align: center;
+  color: #ffaa00;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.shop-item {
+  background: rgba(40, 40, 80, 0.8);
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.1s;
+}
+
+.shop-item:hover {
+  border-color: #ffdd00;
+  transform: scale(1.03);
+}
+
+.shop-item.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.item-name {
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffdd00;
+  margin-bottom: 4px;
+}
+
+.item-type {
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.item-cost {
+  font-size: 12px;
+  color: #ffaa00;
+  margin-bottom: 6px;
+}
+
+.item-desc {
+  font-size: 10px;
+  color: #aaa;
+  line-height: 1.3;
+}
+
+.shop-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 40px;
+  font-size: 18px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #111;
+  background: #ffdd00;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  transition: background 0.2s;
+}
+
+.shop-button:hover {
+  background: #ffee44;
+}

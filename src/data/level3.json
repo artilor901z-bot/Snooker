@@ -1,0 +1,43 @@
+{
+  "id": 3,
+  "name": "Chaos Chamber",
+  "description": "Special balls on the table. Buildings everywhere. Full chaos.",
+  "targetScore": 320,
+  "maxShots": 8,
+  "timeLimit": null,
+  "startCoins": 120,
+  "ballScoreBase": 20,
+  "shopSlots": 6,
+  "cueBallId": "ball_basic",
+  "cueBallPosition": { "x": 220, "y": 270 },
+  "initialBalls": [
+    { "id": "ball_basic",     "x": 460, "y": 200 },
+    { "id": "ball_basic",     "x": 480, "y": 220 },
+    { "id": "ball_basic",     "x": 480, "y": 180 },
+    { "id": "ball_explosive", "x": 500, "y": 240 },
+    { "id": "ball_basic",     "x": 500, "y": 200 },
+    { "id": "ball_basic",     "x": 500, "y": 160 },
+    { "id": "ball_chain",     "x": 520, "y": 260 },
+    { "id": "ball_basic",     "x": 520, "y": 220 },
+    { "id": "ball_splitter",  "x": 520, "y": 180 },
+    { "id": "ball_basic",     "x": 520, "y": 140 },
+    { "id": "ball_multiplier","x": 540, "y": 280 },
+    { "id": "ball_basic",     "x": 540, "y": 240 },
+    { "id": "ball_basic",     "x": 540, "y": 200 },
+    { "id": "ball_speed",     "x": 540, "y": 160 },
+    { "id": "ball_basic",     "x": 540, "y": 120 }
+  ],
+  "preplacedBuildings": [
+    { "id": "bumper",       "x": 380, "y": 340, "angle": 0 },
+    { "id": "rotator",      "x": 650, "y": 180, "angle": 0 },
+    { "id": "black_hole",   "x": 720, "y": 350, "angle": 0 },
+    { "id": "accelerator",  "x": 350, "y": 150, "angle": 0.7854 }
+  ],
+  "shopPool": [
+    "ball_basic", "ball_explosive", "ball_splitter", "ball_heavy",
+    "ball_ghost", "ball_multiplier", "ball_speed", "ball_sticky",
+    "ball_teleport", "ball_chain",
+    "portal", "bumper", "splitter_trap", "absorber", "accelerator",
+    "multiplier_zone", "rotator", "black_hole", "duplicator", "chaos_tile"
+  ]
+}

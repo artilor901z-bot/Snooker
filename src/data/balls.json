@@ -1,0 +1,248 @@
+[
+  {
+    "id": "ball_basic",
+    "name": "Basic Ball",
+    "scoreValue": 10,
+    "mass": 1.0,
+    "radius": 12,
+    "restitution": 0.98,
+    "friction": 0.001,
+    "frictionAir": 0.010,
+    "color": "#ffffff",
+    "cost": 0,
+    "special": {
+      "trigger": "none",
+      "action": "none",
+      "params": {}
+    },
+    "sprite": "ball_basic_32.png",
+    "description": "A standard ball. Reliable, no tricks."
+  },
+  {
+    "id": "ball_explosive",
+    "name": "Explosive Ball",
+    "scoreValue": 15,
+    "mass": 1.4,
+    "radius": 13,
+    "restitution": 0.96,
+    "friction": 0.002,
+    "frictionAir": 0.012,
+    "color": "#ff4422",
+    "cost": 35,
+    "special": {
+      "trigger": "onCollision",
+      "action": "explode",
+      "params": {
+        "blastRadius": 90,
+        "blastForce": 0.06,
+        "cooldownMs": 300,
+        "screenShakeIntensity": 8,
+        "screenShakeDuration": 250,
+        "slowMoScale": 0.55,
+        "slowMoDuration": 200
+      }
+    },
+    "sprite": "ball_explosive_32.png",
+    "description": "Detonates on impact. Sends nearby balls flying."
+  },
+  {
+    "id": "ball_splitter",
+    "name": "Splitter Ball",
+    "scoreValue": 8,
+    "mass": 0.85,
+    "radius": 12,
+    "restitution": 0.98,
+    "friction": 0.001,
+    "frictionAir": 0.010,
+    "color": "#44ff44",
+    "cost": 28,
+    "special": {
+      "trigger": "onCollision",
+      "action": "split",
+      "params": {
+        "count": 2,
+        "childRadius": 8,
+        "childMass": 0.45,
+        "spawnOffsetMultiplier": 1.25,
+        "inheritVelocityFactor": 0.65,
+        "maxSplitsPerBall": 1,
+        "cooldownMs": 250
+      }
+    },
+    "sprite": "ball_splitter_32.png",
+    "description": "Splits into two smaller balls on first hit."
+  },
+  {
+    "id": "ball_heavy",
+    "name": "Heavy Ball",
+    "scoreValue": 12,
+    "mass": 1.8,
+    "radius": 14,
+    "restitution": 0.95,
+    "friction": 0.003,
+    "frictionAir": 0.014,
+    "color": "#888888",
+    "cost": 18,
+    "special": {
+      "trigger": "onCollision",
+      "action": "knockback",
+      "params": {
+        "knockbackMultiplier": 2.5,
+        "extraForce": 0.015,
+        "screenShakeIntensity": 3,
+        "screenShakeDuration": 100
+      }
+    },
+    "sprite": "ball_heavy_32.png",
+    "description": "Massive knockback. Plows through clusters."
+  },
+  {
+    "id": "ball_ghost",
+    "name": "Ghost Ball",
+    "scoreValue": 12,
+    "mass": 0.7,
+    "radius": 11,
+    "restitution": 0.98,
+    "friction": 0.001,
+    "frictionAir": 0.008,
+    "color": "#aaaaff",
+    "cost": 22,
+    "special": {
+      "trigger": "onCollision",
+      "action": "phase",
+      "params": {
+        "passesRemaining": 2,
+        "alphaWhilePhasing": 0.35,
+        "flashOnPhaseTrigger": true
+      }
+    },
+    "sprite": "ball_ghost_32.png",
+    "description": "Phases through buildings twice. Ethereal and slippery."
+  },
+  {
+    "id": "ball_multiplier",
+    "name": "Multiplier Ball",
+    "scoreValue": 10,
+    "mass": 1.0,
+    "radius": 12,
+    "restitution": 0.98,
+    "friction": 0.001,
+    "frictionAir": 0.010,
+    "color": "#ffaa00",
+    "cost": 50,
+    "special": {
+      "trigger": "onHole",
+      "action": "scoreMultiplier",
+      "params": {
+        "multiplier": 3,
+        "popTextColor": "#ffdd00",
+        "popTextScale": 1.5
+      }
+    },
+    "sprite": "ball_multiplier_32.png",
+    "description": "Worth 3x points when pocketed. Golden prize."
+  },
+  {
+    "id": "ball_speed",
+    "name": "Speed Demon",
+    "scoreValue": 10,
+    "mass": 0.8,
+    "radius": 10,
+    "restitution": 0.99,
+    "friction": 0.001,
+    "frictionAir": 0.008,
+    "color": "#ff88ff",
+    "cost": 20,
+    "special": {
+      "trigger": "onCollision",
+      "action": "dash",
+      "params": {
+        "dashForce": 0.03,
+        "dashAngleSpread": 0.2,
+        "cooldownMs": 400,
+        "trailParticleCount": 8,
+        "trailColor": "#ff44ff"
+      }
+    },
+    "sprite": "ball_speed_32.png",
+    "description": "Bursts forward on hit. Leaves a pink trail."
+  },
+  {
+    "id": "ball_sticky",
+    "name": "Sticky Ball",
+    "scoreValue": 10,
+    "mass": 1.1,
+    "radius": 12,
+    "restitution": 0.55,
+    "friction": 0.005,
+    "frictionAir": 0.024,
+    "color": "#44ddbb",
+    "cost": 15,
+    "special": {
+      "trigger": "onCollision",
+      "action": "slow",
+      "params": {
+        "slowFactor": 0.25,
+        "slowDuration": 1500,
+        "tintColor": "#44ddbb",
+        "particleCount": 4
+      }
+    },
+    "sprite": "ball_sticky_32.png",
+    "description": "Drastically slows anything it touches. Gooey."
+  },
+  {
+    "id": "ball_teleport",
+    "name": "Teleport Ball",
+    "scoreValue": 14,
+    "mass": 0.95,
+    "radius": 12,
+    "restitution": 0.98,
+    "friction": 0.001,
+    "frictionAir": 0.010,
+    "color": "#8844ff",
+    "cost": 40,
+    "special": {
+      "trigger": "onCollision",
+      "action": "teleportRandom",
+      "params": {
+        "cooldownMs": 500,
+        "preserveVelocityFactor": 1.0,
+        "spawnOffsetRadius": 15,
+        "flashColor": "#aa66ff",
+        "particleCount": 12
+      }
+    },
+    "sprite": "ball_teleport_32.png",
+    "description": "Warps to a random table position on first collision."
+  },
+  {
+    "id": "ball_chain",
+    "name": "Chain Reactor",
+    "scoreValue": 12,
+    "mass": 1.0,
+    "radius": 12,
+    "restitution": 0.98,
+    "friction": 0.001,
+    "frictionAir": 0.010,
+    "color": "#ffff44",
+    "cost": 45,
+    "special": {
+      "trigger": "onCollision",
+      "action": "chain",
+      "params": {
+        "chainRange": 110,
+        "chainCount": 4,
+        "chainForce": 0.018,
+        "cooldownMs": 350,
+        "boltColor": "#ffff00",
+        "boltSegments": 6,
+        "boltWidth": 2.5,
+        "screenShakeIntensity": 2,
+        "screenShakeDuration": 80
+      }
+    },
+    "sprite": "ball_chain_32.png",
+    "description": "Lightning arcs to nearby balls. Chain mayhem."
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:gist.github.com)",
+      "WebFetch(domain:docs.phaser.io)",
+      "WebFetch(domain:github.com)",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); print\\(data[0][''text''][:8000]\\)\")",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); print\\(data[0][''text''][8000:16000]\\)\")",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); print\\(data[0][''text''][16000:24000]\\)\")",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); print\\(data[0][''text''][24000:32000]\\)\")",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); print\\(data[0][''text''][32000:40000]\\)\")",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); text=data[0][''text'']; print\\(text[40000:48000]\\)\")",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); text=data[0][''text'']; print\\(text[48000:56000]\\)\")",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); text=data[0][''text'']; print\\(text[56000:64000]\\)\")",
+      "Bash(python3 -c \"import json,sys; data=json.load\\(sys.stdin\\); text=data[0][''text'']; print\\(text[64000:]\\)\")",
+      "Bash(npx vite build)",
+      "Bash(timeout 8 npx vite --host)",
+      "Bash(for f in src/data/balls.json src/data/buildings.json src/data/level1.json src/data/level2.json src/data/level3.json)",
+      "Bash(do echo -n \"$f: \")",
+      "Bash(python3 -c \"import json; json.load\\(open\\(''$f''\\)\\); print\\(''VALID''\\)\")",
+      "Bash(done)",
+      "Bash(npm run dev)",
+      "Bash(npm run build)"
+    ]
+  }
+}

@@ -1,0 +1,209 @@
+[
+  {
+    "id": "portal",
+    "name": "Portal",
+    "cost": 40,
+    "color": "#8844ff",
+    "size": { "w": 32, "h": 32 },
+    "isStatic": true,
+    "isSensor": true,
+    "trigger": "onEnter",
+    "action": "teleport",
+    "params": {
+      "linkGroup": "portal",
+      "preserveVelocityFactor": 1.0,
+      "spawnOffset": 15,
+      "cooldownMs": 400,
+      "particleCount": 14,
+      "particleColor": "#aa66ff"
+    },
+    "sprite": "building_portal_32.png",
+    "description": "Place two: ball entering one exits the other.",
+    "requiresPair": true
+  },
+  {
+    "id": "bumper",
+    "name": "Bumper",
+    "cost": 15,
+    "color": "#ff8800",
+    "size": { "w": 24, "h": 24 },
+    "isStatic": true,
+    "isSensor": false,
+    "trigger": "onCollide",
+    "action": "bounce",
+    "params": {
+      "impulseMultiplier": 2.5,
+      "baseForce": 0.025,
+      "squashX": 1.4,
+      "squashY": 0.6,
+      "squashDuration": 120,
+      "particleCount": 6,
+      "sfx": "boing"
+    },
+    "sprite": "building_bumper_32.png",
+    "description": "Bounces balls with amplified force. Boing!"
+  },
+  {
+    "id": "splitter_trap",
+    "name": "Splitter Trap",
+    "cost": 30,
+    "color": "#44ff88",
+    "size": { "w": 32, "h": 32 },
+    "isStatic": true,
+    "isSensor": true,
+    "trigger": "onPass",
+    "action": "split",
+    "params": {
+      "spawnCount": 1,
+      "spawnBallId": "ball_basic",
+      "spawnSpeed": 2.5,
+      "cooldownMs": 600,
+      "particleCount": 8
+    },
+    "sprite": "building_splitter_32.png",
+    "description": "Spawns an extra ball when one passes through."
+  },
+  {
+    "id": "absorber",
+    "name": "Absorber",
+    "cost": 25,
+    "color": "#44aaaa",
+    "size": { "w": 28, "h": 28 },
+    "isStatic": true,
+    "isSensor": false,
+    "trigger": "onCollide",
+    "action": "absorb",
+    "params": {
+      "speedReduction": 0.3,
+      "scoreBonus": 5,
+      "maxAbsorbs": 5,
+      "particleColor": "#66cccc",
+      "growPerAbsorb": 1.05
+    },
+    "sprite": "building_absorber_32.png",
+    "description": "Absorbs impact energy. Grows slightly each hit. +5 score."
+  },
+  {
+    "id": "accelerator",
+    "name": "Accelerator Pad",
+    "cost": 22,
+    "color": "#88ff44",
+    "size": { "w": 36, "h": 18 },
+    "isStatic": true,
+    "isSensor": true,
+    "trigger": "onPass",
+    "action": "accelerate",
+    "params": {
+      "boostMultiplier": 2.2,
+      "maxExitSpeed": 14,
+      "particleTrailCount": 10,
+      "particleColor": "#bbff66",
+      "sfx": "whoosh"
+    },
+    "sprite": "building_accelerator_32.png",
+    "description": "Supercharges ball speed when passing over.",
+    "rotatable": true
+  },
+  {
+    "id": "multiplier_zone",
+    "name": "Multiplier Zone",
+    "cost": 38,
+    "color": "#ffdd00",
+    "size": { "w": 52, "h": 52 },
+    "isStatic": true,
+    "isSensor": true,
+    "trigger": "onPass",
+    "action": "multiplierZone",
+    "params": {
+      "scoreMultiplier": 2.5,
+      "glowColor": "#ffee44",
+      "glowPulseSpeed": 1.5
+    },
+    "sprite": "building_multiplier_32.png",
+    "description": "Balls pocketed from inside this zone score 2.5x!"
+  },
+  {
+    "id": "rotator",
+    "name": "Rotator",
+    "cost": 20,
+    "color": "#cc44cc",
+    "size": { "w": 32, "h": 32 },
+    "isStatic": true,
+    "isSensor": true,
+    "trigger": "onPass",
+    "action": "deflect",
+    "params": {
+      "deflectAngle": 1.0472,
+      "preserveSpeed": true,
+      "spinVisualSpeed": 3.0,
+      "particleCount": 6
+    },
+    "sprite": "building_rotator_32.png",
+    "description": "Deflects ball trajectory by 60 degrees. Spin!"
+  },
+  {
+    "id": "black_hole",
+    "name": "Mini Black Hole",
+    "cost": 48,
+    "color": "#110022",
+    "size": { "w": 40, "h": 40 },
+    "isStatic": true,
+    "isSensor": true,
+    "trigger": "onTick",
+    "action": "attract",
+    "params": {
+      "attractRadius": 110,
+      "attractStrength": 0.001,
+      "slowFactor": 0.94,
+      "innerKillRadius": 8,
+      "innerKillScore": 25,
+      "visualPulse": true,
+      "particleOrbitCount": 3
+    },
+    "sprite": "building_blackhole_32.png",
+    "description": "Gravity well. Pulls balls in; devours close ones for points."
+  },
+  {
+    "id": "duplicator",
+    "name": "Duplicator",
+    "cost": 55,
+    "color": "#ffaaff",
+    "size": { "w": 36, "h": 36 },
+    "isStatic": true,
+    "isSensor": true,
+    "trigger": "onPass",
+    "action": "duplicate",
+    "params": {
+      "maxDuplicates": 2,
+      "duplicateSpeedFactor": 0.7,
+      "offsetAngle": 0.5236,
+      "cooldownMs": 800,
+      "particleCount": 10,
+      "flashColor": "#ffccff"
+    },
+    "sprite": "building_duplicator_32.png",
+    "description": "Clones the ball passing through. Expensive but powerful."
+  },
+  {
+    "id": "chaos_tile",
+    "name": "Chaos Tile",
+    "cost": 12,
+    "color": "#ff44ff",
+    "size": { "w": 32, "h": 32 },
+    "isStatic": true,
+    "isSensor": true,
+    "trigger": "onPass",
+    "action": "chaos",
+    "params": {
+      "randomAngleRange": 6.2832,
+      "speedJitterMin": 0.7,
+      "speedJitterMax": 1.4,
+      "screenShakeIntensity": 4,
+      "screenShakeDuration": 120,
+      "particleCount": 12,
+      "particleColors": ["#ff00ff", "#00ffff", "#ffff00", "#ff4400"]
+    },
+    "sprite": "building_chaos_32.png",
+    "description": "Randomizes ball direction and speed. Pure chaos."
+  }
+]

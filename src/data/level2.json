@@ -1,0 +1,35 @@
+{
+  "id": 2,
+  "name": "Ricochet Rally",
+  "description": "More balls, tighter clusters. Buildings start appearing.",
+  "targetScore": 180,
+  "maxShots": 6,
+  "timeLimit": null,
+  "startCoins": 70,
+  "ballScoreBase": 18,
+  "shopSlots": 5,
+  "cueBallId": "ball_basic",
+  "cueBallPosition": { "x": 250, "y": 270 },
+  "initialBalls": [
+    { "id": "ball_basic",   "x": 500, "y": 170 },
+    { "id": "ball_basic",   "x": 520, "y": 190 },
+    { "id": "ball_basic",   "x": 520, "y": 150 },
+    { "id": "ball_basic",   "x": 540, "y": 210 },
+    { "id": "ball_basic",   "x": 540, "y": 170 },
+    { "id": "ball_basic",   "x": 540, "y": 130 },
+    { "id": "ball_sticky",  "x": 600, "y": 330 },
+    { "id": "ball_basic",   "x": 620, "y": 350 },
+    { "id": "ball_basic",   "x": 620, "y": 310 },
+    { "id": "ball_multiplier", "x": 560, "y": 170 }
+  ],
+  "preplacedBuildings": [
+    { "id": "bumper",       "x": 400, "y": 270, "angle": 0 },
+    { "id": "chaos_tile",   "x": 680, "y": 200, "angle": 0 }
+  ],
+  "shopPool": [
+    "ball_basic", "ball_explosive", "ball_splitter", "ball_heavy",
+    "ball_speed", "ball_sticky", "ball_multiplier",
+    "bumper", "accelerator", "splitter_trap", "multiplier_zone",
+    "absorber", "chaos_tile"
+  ]
+}

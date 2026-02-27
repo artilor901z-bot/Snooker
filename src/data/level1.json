@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "name": "First Break",
+  "description": "A gentle introduction. Pocket 6 balls to pass.",
+  "targetScore": 80,
+  "maxShots": 5,
+  "timeLimit": null,
+  "startCoins": 40,
+  "ballScoreBase": 15,
+  "shopSlots": 3,
+  "cueBallId": "ball_basic",
+  "cueBallPosition": { "x": 280, "y": 270 },
+  "initialBalls": [
+    { "id": "ball_basic", "x": 560, "y": 230 },
+    { "id": "ball_basic", "x": 560, "y": 270 },
+    { "id": "ball_basic", "x": 560, "y": 310 },
+    { "id": "ball_basic", "x": 585, "y": 250 },
+    { "id": "ball_basic", "x": 585, "y": 290 },
+    { "id": "ball_basic", "x": 610, "y": 270 }
+  ],
+  "preplacedBuildings": [],
+  "shopPool": [
+    "ball_basic", "ball_heavy", "ball_speed",
+    "bumper", "accelerator", "chaos_tile"
+  ]
+}
